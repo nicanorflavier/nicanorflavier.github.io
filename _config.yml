@@ -91,4 +91,9 @@ exclude:
 
 plugins:
   - jekyll-seo-tag
+<<<<<<< HEAD
   
+=======
+  
+theme: jekyll-theme-hacker  
+>>>>>>> a3157ec0fdbcad43ff0b0315f080da4d25675cbf
