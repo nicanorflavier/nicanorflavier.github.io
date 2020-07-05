@@ -2,6 +2,7 @@
 layout: post
 title: Enable SSH on CentOS 8 Proxmox LXC containers
 permalink: /blog/:title
+comments: true
 ---
 The CentOS 8 container template that comes by default in Proxmox does not have the SSH enabled and installed. That means it will not be convenient if you deploy hundreds of containers to manage it, as you need to go to the Proxmox host console first before managing the containers. The easier way is for systems administrators to use remote desktop connection manager tools like (mRemoteNG or PAC Manager) to connections. That means you have to enable SSH in each one of the containers. To enable the SSH on CentOS 8 container, you have to do the following.
 
