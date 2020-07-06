@@ -22,7 +22,7 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-          <div class="site-avatar"><a href="{{ site.baseurl }}/"><img src="{{ site.avatar }}" /></a></div>
+          <div class="site-avatar"><a href="{{ site.baseurl }}/"><img alt="avatar" src="{{ site.avatar }}" /></a></div>
             <h3 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h3>
             <div class="site-description">{{ site.description }}</div>       
         </div>
@@ -87,7 +87,7 @@
 
 {% include analytics.html %}
 
-<script type="text/javascript">
+<script>
   $(document).ready(function () {
       $("#sidebar").mCustomScrollbar({
           theme: "minimal"

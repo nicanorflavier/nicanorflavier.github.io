@@ -113,15 +113,15 @@ The CentOS 8 container template that comes by default in Proxmox does not have t
     ```bash
     [brad@unknownserver ~]$ sudo ls -la /root
       total 36
-      dr-xr-x---  2 root root 4096 Jan  2 20:20 .
-      drwxr-xr-x 19 root root 4096 Jan  2 20:17 ..
-      -rw-------  1 root root  942 Jan  2 20:20 .bash_history
+      dr-xr-x---  2 root root 4096 Jan  2 19:10 .
+      drwxr-xr-x 19 root root 4096 Jan  2 19:07 ..
+      -rw-------  1 root root  942 Jan  2 19:10 .bash_history
       -rw-r--r--  1 root root   18 May 11  2019 .bash_logout
       -rw-r--r--  1 root root  176 May 11  2019 .bash_profile
       -rw-r--r--  1 root root  176 May 11  2019 .bashrc
       -rw-r--r--  1 root root  100 May 11  2019 .cshrc
       -rw-r--r--  1 root root  129 May 11  2019 .tcshrc
-      -rw-------  1 root root  532 Jan  2 20:20 .viminfo
+      -rw-------  1 root root  532 Jan  2 19:10 .viminfo
     ```
 10. Now we will disable SSH root login using vim text editor, this time we will use again the sudo command.
    ```bash 
@@ -145,6 +145,28 @@ The CentOS 8 container template that comes by default in Proxmox does not have t
 
     <div class="alert alert-danger" role="alert">Access denied </div>
 
+14. Do not forget to synchronize our time, since we are running an unprivilege container, we are unable to use NTP or chrony daemon on the container, however we can change the current timezone, we can manually do this by using the timedatectl command. The command below will show you your current timezone.
+    ```bash
+    timedatectl
+    ```
+    <div>Output:</div>
+    ```bash
+    Local time: Thu 2020-01-02 10:20:58 UTC
+    Universal time: Thu 2020-01-02 10:20:58 UTC
+    RTC time: n/a
+    Time zone: UTC (UTC, +0000)
+    System clock synchronized: yes
+    NTP service: inactive
+    RTC in local TZ: no
+    ```
+15. List the available time zones.
+    ```bash
+    timedatectl list-timezones
+    ```
+16. Set the timezone to Australia/Adelaide which is my current timezone here, select the one appropriate for your timezone.
+    ```bash
+    sudo timedatectl set-timezone Australia/Adelaide
+    ```
 <h2>Conclusion</h2>
 <div class="alert alert-dark" role="alert">
 We have enabled SSH, enabled sudo users and have disabled SSH root login, now you can create this as a template in your Proxmox so everytime you will provision new containers you do not need to redo the whole steps. This guide is applicable anywhere, whether you are using VMs or if you are doing a VM in a cloud like AWS or Azure, you can follow the steps as well.
