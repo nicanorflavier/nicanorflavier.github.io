@@ -51,7 +51,7 @@ a:focus {
 }
 
 #sidebar {
-    width: 350px;
+    width: 250px;
     position: fixed;
     top: 0;
     left: 0;
@@ -63,7 +63,7 @@ a:focus {
 }
 
 #sidebar.active {
-    margin-left: -350px;
+    margin-left: -250px;
 }
 
 #sidebar .sidebar-header {
